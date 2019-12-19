@@ -1,7 +1,9 @@
 steps:
-  - name: "gcr.io/cloud-builders/docker"
+  - id: build docker image
+    name: "gcr.io/cloud-builders/docker"
     args:
       ["build", "-t", "gcr.io/devtest-cloudrund-handson/my-first-image", "."]
-  - name: "gcr.io/cloud-builders/docker"
+  - id: Push Docker image
+    name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/devtest-cloudrund-handson/my-first-image"]
 images: ["gcr.io/devtest-cloudrund-handson/my-first-image"]
