@@ -15,7 +15,7 @@ steps:
         "deploy",
         "my-first-image-dev",
         "--image",
-        "gcr.io/devtest-cloudrund-handson/gcr.io/devtest-cloudrund-handson/my-first-image",
+        "gcr.io/devtest-cloudrund-handson/my-first-image",
         "--region",
         asia-northeast1,
         "--platform",
