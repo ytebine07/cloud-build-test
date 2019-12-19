@@ -1,5 +1,5 @@
 steps:
-  - id: build docker image
+  - id: 日本語使えますか
     name: "gcr.io/cloud-builders/docker"
     args:
       ["build", "-t", "gcr.io/devtest-cloudrund-handson/my-first-image", "."]
