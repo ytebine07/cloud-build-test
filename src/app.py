@@ -7,16 +7,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    target = os.environ.get('TARGET', 'World')
-    env = os.environ.get('_ENV', 'DEFAULT')
-    containerId = os.environ.get('HOSTNAME', 'XXXXXXX')
+    env = os.environ.get('_ENV', 'undefined')
     allenv = ''
     for env in os.environ:
         allenv += env + ' : ' + os.environ.get(env) + '<br>'
-
-    hostname = subprocess.check_output('hostname')
-    return hostname
-    # return "Hello {}!<br>Here is {}<br>ContainerID is {} <br>all : ".format(target, env, containerId)
+    return "<h1>{}</h1>{}".format(env, allenv)
 
 
 if __name__ == "__main__":
