@@ -16,11 +16,11 @@ steps:
         "deploy",
         "my-first-image-staging",
         "--image",
-        "gcr.io/devtest-cloudrund-handson/my-first-image",
+        "gcr.io/devtest-cloudrund-handson/my-first-image:staging",
         "--region",
         asia-northeast1,
         "--platform",
         "managed",
         "--allow-unauthenticated",
       ]
-images: ["gcr.io/devtest-cloudrund-handson/my-first-image"]
+images: ["gcr.io/devtest-cloudrund-handson/my-first-image:staging"]
