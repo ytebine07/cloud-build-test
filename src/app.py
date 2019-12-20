@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    env = os.environ.get('_ENV', 'undefined')
+    _env = os.environ.get('_ENV', 'undefined')
     allenv = ''
     for env in os.environ:
         allenv += env + ' : ' + os.environ.get(env) + '<br>'
-    return "<h1>{}</h1>{}".format(env, allenv)
+    return "<h1>{}</h1>{}".format(_env, allenv)
 
 
 if __name__ == "__main__":
