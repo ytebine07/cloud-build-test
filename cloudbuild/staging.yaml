@@ -1,4 +1,9 @@
 steps:
+  - id: ContainerRegistryからPulla
+    name: "gcr.io/cloud-builders/docker"
+    args: ["pull", "gcr.io/devtest-cloudrund-handson/my-first-image:develop"]
+  - id: 再び単体テスト?(まだステップだけ)
+    name: "gcr.io/cloud-builders/docker"
   - id: stagingのタグ付
     name: "gcr.io/cloud-builders/docker"
     args: ["tag",
