@@ -10,10 +10,12 @@ def hello_world():
     target = os.environ.get('TARGET', 'World')
     env = os.environ.get('_ENV', 'DEFAULT')
     containerId = os.environ.get('HOSTNAME', 'XXXXXXX')
+    allenv = ''
     for env in os.environ:
-        print(env)
+        allenv += env + ' : ' + os.environ.get(env) + '<br>'
 
-    return "Hello {}!<br>Here is {}<br>ContainerID is {} <br>all : ".format(target, env, containerId)
+    return allenv
+    # return "Hello {}!<br>Here is {}<br>ContainerID is {} <br>all : ".format(target, env, containerId)
 
 
 if __name__ == "__main__":
