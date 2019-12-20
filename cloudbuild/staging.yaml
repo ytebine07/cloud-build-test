@@ -23,4 +23,3 @@ steps:
         "managed",
         "--allow-unauthenticated",
       ]
-images: ["gcr.io/devtest-cloudrund-handson/my-first-image:staging"]
