@@ -9,7 +9,8 @@ app = Flask(__name__)
 def hello_world():
     target = os.environ.get('TARGET', 'World')
     env = os.environ.get('_ENV', 'DEFAULT')
-    return "Hello {}!<br>Here is {}".format(target, env)
+    containerId = os.environ.get('HOSTNAME', 'XXXXXXX')
+    return "Hello {}!<br>Here is {}<br>ContainerID is {} ".format(target, env, containerId)
 
 
 if __name__ == "__main__":
