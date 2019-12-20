@@ -10,6 +10,7 @@ def hello_world():
     target = os.environ.get('TARGET', 'World')
     env = os.environ.get('_ENV', 'DEFAULT')
     containerId = os.environ.get('HOSTNAME', 'XXXXXXX')
+    print(os.environ)
     return "Hello {}!<br>Here is {}<br>ContainerID is {} ".format(target, env, containerId)
 
 
