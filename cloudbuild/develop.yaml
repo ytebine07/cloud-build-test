@@ -5,7 +5,7 @@ steps:
       ["build", "-t", "gcr.io/devtest-cloudrund-handson/my-first-image", "."]
   - id: ContainerRegistryへPush
     name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/devtest-cloudrund-handson/my-first-image"]
+    args: ["push", "gcr.io/devtest-cloudrund-handson/my-first-image:develop"]
   - id: CloudRunへデプロイ(dev)
     name: "gcr.io/cloud-builders/gcloud"
     args:
