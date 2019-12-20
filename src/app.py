@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask
-
+import subprocess
 app = Flask(__name__)
 
 
@@ -14,7 +14,8 @@ def hello_world():
     for env in os.environ:
         allenv += env + ' : ' + os.environ.get(env) + '<br>'
 
-    return allenv
+    hostname = subprocess.check_output('hostname')
+    return hostname
     # return "Hello {}!<br>Here is {}<br>ContainerID is {} <br>all : ".format(target, env, containerId)
 
 
