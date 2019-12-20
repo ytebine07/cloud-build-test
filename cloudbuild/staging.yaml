@@ -1,5 +1,17 @@
 steps:
-  - id: DockerImageビルド
-    name: "gcr.io/cloud-builders/docker"
+  - id: CloudRunへデプロイ(staging)
+    name: "gcr.io/cloud-builders/gcloud"
     args:
-      ["build", "-t", "gcr.io/devtest-cloudrund-handson/my-first-image", "."]
+      [
+        "beta",
+        "run",
+        "deploy",
+        "my-first-image-staging",
+        "--image",
+        "gcr.io/devtest-cloudrund-handson/my-first-image",
+        "--region",
+        asia-northeast1,
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
+      ]
