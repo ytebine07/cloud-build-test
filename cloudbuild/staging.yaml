@@ -1,4 +1,9 @@
 steps:
+  - id: ContainerRegistryからPull
+    name: "gcr.io/cloud-builders/docker"
+    args: ["pull", "gcr.io/devtest-cloudrund-handson/my-first-image:develop"]
+  - id: 再び単体テスト？
+    name: "gcr.io/cloud-builders/docker"
   - id: CloudRunへデプロイ(staging)
     name: "gcr.io/cloud-builders/gcloud"
     args:

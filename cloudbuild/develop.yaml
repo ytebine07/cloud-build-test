@@ -3,6 +3,8 @@ steps:
     name: "gcr.io/cloud-builders/docker"
     args:
       ["build", "-t", "gcr.io/devtest-cloudrund-handson/my-first-image:develop", "."]
+  - id: 単体テスト(まだstepだけ)
+    name: "gcr.io/cloud-builders/docker"
   - id: ContainerRegistryへPush
     name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/devtest-cloudrund-handson/my-first-image:develop"]
