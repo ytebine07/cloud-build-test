@@ -2,12 +2,7 @@ steps:
   - id: ContainerRegistryからPulla
     name: "gcr.io/cloud-builders/docker"
     args: ["pull", "gcr.io/devtest-cloudrund-handson/my-first-image:develop"]
-  - id: stagingのタグ付
-    name: "gcr.io/cloud-builders/docker"
-    args: ["tag",
-    "gcr.io/devtest-cloudrund-handson/my-first-image:develop",
-    "gcr.io/devtest-cloudrund-handson/my-first-image:staging"]
-  - id: CloudRunへデプロイ(staging)dayo
+ - id: CloudRunへデプロイ(staging)dayo
     name: "gcr.io/cloud-builders/gcloud"
     args:
       [
@@ -16,11 +11,16 @@ steps:
         "deploy",
         "my-first-image-staging",
         "--image",
-        "gcr.io/devtest-cloudrund-handson/my-first-image:staging",
+        "gcr.io/devtest-cloudrund-handson/my-first-image:develop",
         "--region",
         asia-northeast1,
         "--platform",
         "managed",
         "--allow-unauthenticated",
       ]
+  - id: stagingのタグ付
+    name: "gcr.io/cloud-builders/docker"
+    args: ["tag",
+    "gcr.io/devtest-cloudrund-handson/my-first-image:develop",
+    "gcr.io/devtest-cloudrund-handson/my-first-image:staging"]
 images: ["gcr.io/devtest-cloudrund-handson/my-first-image:staging"]
