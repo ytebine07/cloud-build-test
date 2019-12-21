@@ -9,7 +9,7 @@ steps:
     args: ["tag",
     "gcr.io/devtest-cloudrund-handson/my-first-image:develop",
     "gcr.io/devtest-cloudrund-handson/my-first-image:staging"]
-  - id: CloudRunへデプロイ(staging)
+  - id: CloudRunへデプロイ(staging)dayo
     name: "gcr.io/cloud-builders/gcloud"
     args:
       [
