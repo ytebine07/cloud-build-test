@@ -1,9 +1,9 @@
 steps:
-  - id: DockerImageビルドa
+  - id: DockerImageビルド
     name: "gcr.io/cloud-builders/docker"
     args:
       ["build", "-t", "gcr.io/devtest-cloudrund-handson/my-first-image:develop", "."]
-  - id: 単体テスト(まだstepだけ)
+  - id: 単体テスト(未実装)
     name: "gcr.io/cloud-builders/docker"
   - id: ContainerRegistryへPush
     name: "gcr.io/cloud-builders/docker"
@@ -24,4 +24,6 @@ steps:
         "managed",
         "--allow-unauthenticated",
       ]
+  - id: 通しのテスト(未実装)
+    name: "gcr.io/cloud-builders/docker"
 images: ["gcr.io/devtest-cloudrund-handson/my-first-image:develop"]
