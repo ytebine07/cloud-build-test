@@ -2,7 +2,7 @@ steps:
   - id: ContainerRegistryからPulla
     name: "gcr.io/cloud-builders/docker"
     args: ["pull", "gcr.io/devtest-cloudrund-handson/my-first-image:develop"]
- - id: CloudRunへデプロイ(staging)dayo
+  - id: CloudRunへデプロイ(staging)dayo
     name: "gcr.io/cloud-builders/gcloud"
     args:
       [
