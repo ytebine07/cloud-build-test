@@ -1,5 +1,31 @@
 steps:
-  - id: DockerImageビルド
+  - id: ContainerRegistryからPull
     name: "gcr.io/cloud-builders/docker"
+    args: ["pull", "gcr.io/devtest-cloudrund-handson/my-first-image:staging"]
+  - id: 単体テスト(未実装)
+    name: "gcr.io/cloud-builders/docker"
+  - id: CloudRunへデプロイ(production)
+    name: "gcr.io/cloud-builders/gcloud"
     args:
-      ["build", "-t", "gcr.io/devtest-cloudrund-handson/my-first-image", "."]
+      [
+        "beta",
+        "run",
+        "deploy",
+        "my-first-image-production",
+        "--image",
+        # まだタグがつけ変わっていないので、ここでデプロイするのは[staging]
+        "gcr.io/devtest-cloudrund-handson/my-first-image:staging",
+        "--region",
+        asia-northeast1,
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
+      ]
+  - id: 通しのテスト(未実装)
+    name: "gcr.io/cloud-builders/docker"
+  - id: productionのタグ付
+    name: "gcr.io/cloud-builders/docker"
+    args: ["tag",
+    "gcr.io/devtest-cloudrund-handson/my-first-image:staging",
+    "gcr.io/devtest-cloudrund-handson/my-first-image:production"]
+images: ["gcr.io/devtest-cloudrund-handson/my-first-image:production"]
