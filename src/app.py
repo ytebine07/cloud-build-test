@@ -11,7 +11,7 @@ def hello_world():
     allenv = ''
     for env in os.environ:
         allenv += env + ' : ' + os.environ.get(env) + '<br>'
-    return "<h1>{}</h1><p>hoge2</p>{}".format(_env, allenv)
+    return "<h1>{}</h1><p>aaa</p>{}".format(_env, allenv)
 
 
 if __name__ == "__main__":
