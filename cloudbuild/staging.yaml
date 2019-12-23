@@ -1,5 +1,5 @@
 steps:
-  - id: ContainerRegistryからPulla
+  - id: ContainerRegistryからPull
     name: "gcr.io/cloud-builders/docker"
     args: ["pull", "gcr.io/devtest-cloudrund-handson/my-first-image:develop"]
   - id: 単体テスト(未実装)
